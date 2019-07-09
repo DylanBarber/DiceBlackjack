@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>RTH Code Academy</title>
+    <title>Dice Blackjack</title>
     <link href='./styles.css' rel='stylesheet' type='text/css'>
 </head>
 
@@ -13,12 +13,16 @@
         <div class='user1Container'>
             <p id='user1Score'>User 1's Score: 0</p>
         </div>
-        <div class='diceContainer'>
+        <div class='rollContainer'>
+            <div class='diceContainer'>
             <img class='dice'>
             <img class='dice'>
-            <button class='roll' onclick=rolldice()></button>
-            <button onclick=hold()>HOLD</button>
-            <button onclick=reset()>RESET</button>
+            </div>
+            <div class='controlsContainer'>
+                <div id='roll'></div>
+                <div id='hold'></div>
+                <div id='reset'></div>
+            </div>
         </div>
         <div class='user2Container'>
             <p id='user2Score'>User 2's Score: 0</p>
@@ -57,18 +61,18 @@
         //Switches the current player
         function hold() {
             //Disallow user from changing user div color if game is over
-            if (winCheck() === true){
+            if (winCheck() === true) {
                 return;
             }
 
             //Add to the turn counter
             turn += 1;
-            
+
             //This will change the div color for whos turn it is
-            if (turn % 2 === 0){
+            if (turn % 2 === 0) {
                 document.querySelector('.user2Container').classList.remove('user2ContainerGradient');
                 document.querySelector('.user1Container').classList.add('user1ContainerGradient');
-            } else{
+            } else {
                 document.querySelector('.user1Container').classList.remove('user1ContainerGradient');
                 document.querySelector('.user2Container').classList.add('user2ContainerGradient');
             }
@@ -101,7 +105,7 @@
         }
 
         //Rolls the dice
-        function rolldice() {
+        document.getElementById('roll').addEventListener("click", function() {
             if (winCheck() === true) {
                 return;
             }
@@ -133,7 +137,7 @@
                 console.log('turn count: ' + turn);
             }
             winCheck()
-        }
+        });
     </script>
 </body>
 
