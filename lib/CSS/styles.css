@@ -1,7 +1,7 @@
 .dice{
     height: 64px;
     width: 64px;
-    background: url('./agk_spritesheet_dice2.png');
+    background: url('../img/agk_spritesheet_dice2.png');
     display: inline-block;
     margin: 10px;
     border-radius: 10px;
@@ -68,19 +68,19 @@ p {
     font-weight: bold;
 }
 #roll {
-    background-image: url('./roll.png');
+    background-image: url('../img/roll.png');
     background-size: cover;
     width: 30px;
     height: 30px;
 }
 #hold {
-    background-image: url('./hold.png');
+    background-image: url('../img/hold.png');
     background-size: cover;
     width: 30px;
     height: 30px;
 }
 #reset {
-    background-image: url('./reset.png');
+    background-image: url('../img/reset.png');
     background-size: cover;
     width: 30px;
     height: 30px;
