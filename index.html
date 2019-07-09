@@ -44,7 +44,7 @@
         let roll2Result;
 
         //Resets the game
-        function reset() {
+        document.getElementById('reset').addEventListener("click", function() {
             user1Score = 0;
             user2Score = 0;
             turn = 0;
@@ -56,10 +56,10 @@
             document.getElementById('user2Score').innerHTML = "User 2's Score: 0";
             document.querySelector('h1').innerHTML = 'Dice Blackjack'
             document.querySelector('.user1Container').classList.add('user1ContainerGradient');
-        }
+        });
 
         //Switches the current player
-        function hold() {
+        document.getElementById('hold').addEventListener("click", function() {
             //Disallow user from changing user div color if game is over
             if (winCheck() === true) {
                 return;
@@ -77,7 +77,7 @@
                 document.querySelector('.user2Container').classList.add('user2ContainerGradient');
             }
             return turn;
-        }
+        });
 
         //Checks for the winner
         function winCheck() {
